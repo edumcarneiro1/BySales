@@ -12,11 +12,11 @@
     <%= stylesheet_link_tag "bootstrap", "application" %>
   </head>
   <body>
-    <% form_tag url(:sessions, :create), :class=>"login form-horizontal" do %>
+    <% form_tag url(:sessions, :create), :class=>"login-form form-horizontal col-xs-12 col-sm-12 col-md-offset-4 col-md-4" do %>
       <div class="login-header modal-header">
         <div class="login-logo"><h1>bySales Admin</h1></div>
       </div>
-      <div class="login-body modal-body">
+      <div class=" modal-body">
 
         <%= {:error => 'danger', :warning => 'warning', :success => 'success', :notice => 'info'}.map { |type, class_name| flash_tag(type, :class => "alert alert-#{class_name} fade in", :bootstrap => true) }.join.html_safe %>
 

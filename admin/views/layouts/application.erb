@@ -61,6 +61,9 @@
                     <a href="#">Settings</a>
                 </li>
             </ul>
+            <div class="session-off">
+              <%= button_to(:logout, url(:sessions, :destroy), :method => :delete, :class => '', :submit_options => { :type => :submit, :title => pat(:logout), :class => 'button-power-off' }) { tag_icon(:'power-off') } %>
+            </div>
         </div>
         <!-- /#sidebar-wrapper -->
 

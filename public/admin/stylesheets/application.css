@@ -8,7 +8,28 @@
     overflow-x: hidden;
  }
 
+
+/* Login Styles */
+.login-logo {text-align: center;}
+
+.login-form {margin-top: 150px;}
+
+/* ------------ */
 /* Toggle Styles */
+.session-off {
+  position: absolute;
+  bottom: 40px;
+  left: 111px;
+  font-size: 20px;
+}
+.session-off  form {
+  color: #ffffff;
+}
+
+.session-off form button {
+  background-color: #000;
+  border: 0px;
+}
 
 #wrapper {
     padding-left: 0;
