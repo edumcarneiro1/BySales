@@ -36,9 +36,6 @@ module Bysales
       role.project_module :accounts, '/accounts'
     end
 
-    get '/' do
-      p 'teste'
-    end
 
     # Custom error management
     error(403) { @title = "Error 403"; render('errors/403', :layout => :error) }
