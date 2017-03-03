@@ -16,6 +16,19 @@
 
 /* ------------ */
 /* Toggle Styles */
+
+.store-link {
+  position: absolute;
+  bottom: 78px;
+  left: 84px;
+  font-size: 11px;
+}
+
+#go-to {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
 .session-off {
   position: absolute;
   bottom: 40px;
@@ -92,7 +105,7 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #ffffff;
 }
 
 .sidebar-nav li a:hover {
@@ -113,7 +126,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: #ffffff;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -121,6 +134,9 @@
     background: none;
 }
 
+@media(min-width: 992px) {
+  #menu-toggle {display: none;}
+}
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
