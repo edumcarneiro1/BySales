@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 4) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
@@ -20,6 +20,29 @@ ActiveRecord::Schema.define(version: 1) do
     t.string   "role"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "artists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "phone"
+    t.string "email"
+    t.string "address"
+    t.string "title"
+    t.string "subtitle"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "pinterest"
+  end
+
+  create_table "artworks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "image"
+    t.string "name"
+    t.text   "description", limit: 65535
+  end
+
+  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "image"
+    t.string "title"
+    t.text   "body",  limit: 4294967295
   end
 
 end

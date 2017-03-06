@@ -8,7 +8,11 @@
     overflow-x: hidden;
  }
 
+/* General */
 
+.save {float: right !important;}
+
+/* ------------ */
 /* Login Styles */
 .login-logo {text-align: center;}
 
@@ -134,8 +138,27 @@
     background: none;
 }
 
+/* Settings */
+.social-input {
+  float: right;
+  width: 92%;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+/* ---------*/
+
 @media(min-width: 992px) {
   #menu-toggle {display: none;}
+}
+
+@media(max-width: 768px) {
+  .social-input {
+    float: right;
+    width: 87%;
+  }
 }
 @media(min-width:768px) {
     #wrapper {

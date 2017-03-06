@@ -26,6 +26,11 @@ gem 'mysql2'
 # Padrino Stable Gem
 gem 'padrino', '0.13.2'
 
+group :development do
+  gem 'byebug'
+  gem 'rubocop', require: false
+end
+
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
