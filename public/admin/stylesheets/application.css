@@ -148,8 +148,20 @@
   margin-bottom: 20px;
 }
 
+.button-loader {
+  margin-right: 10px;
+}
+
 /* ---------*/
 
+/* PAGES */
+
+.pages-action {margin-bottom: 20px;}
+/* ---------*/
+
+/* GALLERY */
+.art-image {width: 50px; height: 50px;}
+/* ---------*/
 @media(min-width: 992px) {
   #menu-toggle {display: none;}
 }

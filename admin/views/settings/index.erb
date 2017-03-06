@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="btn-group col-xs-12">
-        <button id="save"type="button" class="btn btn-primary save">Save</button>
+        <button id="save"type="button" class="btn btn-primary save"><i id="loader" class="fa fa-circle-o-notch fa-spin fa-fw button-loader" style="display:none"></i>Save</button>
       </div>
     </div>
     </div>
@@ -64,7 +64,7 @@
               "instagram": $('#instagram').val(),
               "pinterest": $('#pinterest').val()
             }
-
+      $('#loader').show();
       $.ajax({
         url: "<%= url(:settings, :save) %>",
         data: form,
@@ -80,6 +80,7 @@
             $('#alert').show();
             $('#alert').html(data.message);
           }
+          $('#loader').hide();
         }
       });
     });
