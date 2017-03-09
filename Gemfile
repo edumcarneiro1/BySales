@@ -20,6 +20,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'mysql2'
+gem 'aws-sdk', '~> 2'
 
 # Test requirements
 

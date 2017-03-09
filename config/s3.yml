@@ -1,0 +1,23 @@
+development:
+  access_key_id: AKIAIRUS3CGVWEWZZXTQ # from IAM user jumpsellerdev
+  secret_access_key: 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
+  bucket: bysalescloud
+  url: http://s3-eu-west-1.amazonaws.com/
+  endpoint: s3-eu-west-1.amazonaws.com
+  region: eu-west-1 # for aws-sdk v2
+
+test:
+  access_key_id: AKIAIRUS3CGVWEWZZXTQ # from IAM user jumpsellerdev
+  secret_access_key: 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
+  bucket: bysalescloud
+  url: http://s3-eu-west-1.amazonaws.com/
+  endpoint: s3-eu-west-1.amazonaws.com
+  region: eu-west-1 # for aws-sdk v2
+
+production:
+  access_key_id: AKIAIRUS3CGVWEWZZXTQ # from IAM user jumpsellerdev
+  secret_access_key: 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
+  bucket: bysalescloud
+  url: http://s3-eu-west-1.amazonaws.com/
+  endpoint: s3-eu-west-1.amazonaws.com
+  region: eu-west-1 # for aws-sdk v2
