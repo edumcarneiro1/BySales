@@ -27,6 +27,13 @@ class S3Upload
       path
     end
 
+    def delete_older_images(artwork,name)
+      bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
+      older_object_name = Artwork.first.image.split('/').last
+      object =  bucket.object("works/#{artwork.id}/#{older_object_name}")
+      object.delete if object
+    end
+
     def image_upload_from_temp(artwork, name)
       bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
       temp_object = bucket.object("works/new/#{name}")
@@ -35,6 +42,12 @@ class S3Upload
       temp_object&.copy_to(bucket: S3Upload.cfg['bucket'], key: s3_path, acl: 'public-read')
       temp_object.delete
       artwork.update(image: "https://s3-eu-west-1.amazonaws.com/bysalescloud/" + s3_path)
+    end
+
+    def delete_image(artwork)
+      bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
+      object =  bucket.object("works/#{artwork.id}/#{artwork.image.split('/').last}")
+      object.delete if object
     end
 
   end
