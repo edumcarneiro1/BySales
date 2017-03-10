@@ -3,12 +3,20 @@
 var Menu = React.createClass({
   displayName: "Menu",
 
+  changetab: function changetab(e) {
+    var text = e.target.innerHTML;
+    this.props.changetab(text);
+  },
   render: function render() {
     var pages = [];
+    var self = this;
     this.props.pages.map(function (elem, index) {
+      if (self.props.tab == elem.title) {
+        var active = "active";
+      }
       pages.push(React.createElement(
         "button",
-        null,
+        { key: index, className: active, onClick: self.changetab },
         elem.title
       ));
     });
@@ -17,14 +25,14 @@ var Menu = React.createClass({
       { className: "portfolio-menu text-center mb-50" },
       React.createElement(
         "button",
-        { className: "active" },
-        "WORK"
+        { onClick: self.changetab, className: "active" },
+        "work"
       ),
       pages,
       React.createElement(
         "button",
-        null,
-        "CONTACT"
+        { onClick: self.changetab },
+        "contact"
       )
     );
   }
