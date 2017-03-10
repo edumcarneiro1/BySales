@@ -27,26 +27,26 @@ class S3Upload
       path
     end
 
-    def delete_older_images(artwork,name)
+    def delete_older_images(obj,name,type)
       bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
-      older_object_name = Artwork.first.image.split('/').last
-      object =  bucket.object("works/#{artwork.id}/#{older_object_name}")
+      older_object_name = obj.image.split('/').last
+      object =  bucket.object("#{type}/#{obj.id}/#{older_object_name}")
       object.delete if object
     end
 
-    def image_upload_from_temp(artwork, name)
+    def image_upload_from_temp(obj, name,type)
       bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
-      temp_object = bucket.object("works/new/#{name}")
+      temp_object = bucket.object("#{type}/new/#{name}")
       return unless temp_object.exists?
-      s3_path = "works/#{artwork.id.to_s}/#{name}"
+      s3_path = "#{type}/#{obj.id.to_s}/#{name}"
       temp_object&.copy_to(bucket: S3Upload.cfg['bucket'], key: s3_path, acl: 'public-read')
       temp_object.delete
-      artwork.update(image: "https://s3-eu-west-1.amazonaws.com/bysalescloud/" + s3_path)
+      obj.update(image: "https://s3-eu-west-1.amazonaws.com/bysalescloud/" + s3_path)
     end
 
-    def delete_image(artwork)
+    def delete_image(obj,type)
       bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
-      object =  bucket.object("works/#{artwork.id}/#{artwork.image.split('/').last}")
+      object =  bucket.object("#{type}/#{obj.id}/#{obj.image.split('/').last}") if obj.image
       object.delete if object
     end
 

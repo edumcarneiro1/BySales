@@ -18,8 +18,8 @@
           <tr>
             <td style="width: 10%"><a title="Edit ArtWork" href="<%= url(:artworks, :edit, id: work.id) %>""><img class="art-image" src="<%= work.image %>"></a></td>
             <td style="width: 30%"><%= work.name %></td>
-            <td style="width: 60%"><%= work.description %></td>
-            <td style="width: 10%"><a href="<%= url(:artworks, :destroy, id: work.id) %>" title="Delete ArtWork"><i class="fa fa-trash-o trash" aria-hidden="true"></i></a></td>
+            <td style="width: 50%"><%= work.description %></td>
+            <td style="width: 10%"><a class="trash "href="<%= url(:artworks, :destroy, id: work.id) %>" title="Delete ArtWork"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <% end %>
         </tbody>

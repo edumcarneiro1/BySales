@@ -1,29 +1,27 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 pages-action">
-      <button id="create" type="button" class="btn btn-primary save">Create</button>
+      <a href="<%= url(:pages, :new) %>" id="create" type="button" class="btn btn-primary save">Create</a>
     </div>
   </div>
   <div class="row">
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
-          <th>Title</th>
-          <th>Body</th>
+          <th style="width: 10%"></th>
+          <th style="width: 30%">Title</th>
+          <th style="width: 50%">Body</th>
+          <th style="width: 10%"></th>
         </thead>
         <tbody>
+          <% @pages.each do |page| %>
           <tr>
-            <td><a href="#">About Me</a></td>
-            <td>Bons Rapazes (2016), oil on canvas, 100cm x 80cm</td>
+            <td style="width: 10%"><a title="Edit Page" href="<%= url(:pages, :edit, id: page.id) %>"><img class="art-image" src="<%= page.image %>"></a></td>
+            <td style="width: 30%"><%= page.title %></td>
+            <td style="width: 50%"><%= page.body %></td>
+            <td style="width: 10%"><a class="trash" href="<%= url(:pages, :destroy, id: page.id) %>" title="Delete ArtWork"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
-          <tr>
-            <td><a href="#">About Me</a></td>
-            <td>Bons Rapazes (2016), oil on canvas, 100cm x 80cm</td>
-          </tr>
-          <tr>
-            <td><a href="#">About Me</a></td>
-            <td>Bons Rapazes (2016), oil on canvas, 100cm x 80cm</td>
-          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

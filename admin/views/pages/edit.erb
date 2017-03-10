@@ -1,0 +1,55 @@
+<div class="container-fluid page">
+  <div class="row">
+    <form id="new" class="col-md-6 col-md-offset-3" action="<%= url(:pages, :edit, id: @page.id) %>" method="post">
+      <div class="col-xs-12">
+        <img id="main-img" class="img-responsive art-image-form" src="<%= @page.image %>">
+      </div>
+      <div class="col-xs-12" id="form">
+        <div class="form-group col-xs-12">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Title" required value="<%= @page.title %>">
+        </div>
+        <div class="form-group col-xs-12">
+          <label for="body">Body</label>
+          <textarea  id="body" class="form-control" name="body" rows="15" placeholder="Body"><%= @page.body%></textarea>
+        </div>
+        <div class="form-group col-xs-12">
+          <label for="image">Image</label>
+          <input type="file" id="inputfile">
+          <input style="display:none;" name="image" id="image">
+        </div>
+        <div class="btn-group col-xs-12">
+          <button id="save" type="submit" class="btn btn-primary save"><i id="loader" class="fa fa-circle-o-notch fa-spin fa-fw button-loader" style="display:none"></i>Save</button>
+        </div>
+      </div>
+
+    </form>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+    var $fileInput = $('#inputfile');
+    $fileInput.fileupload({
+      fileInput: $fileInput,
+      url: '<%= @presigned_edit.url %>',
+      type: 'POST',
+      formData: {
+        '<%= "Content-Type" %>': '<%= "image/png" %>',
+        <% @presigned_edit.fields.each_with_index do |(name, value), index| %>
+        '<%= name %>': '<%= value %>'<% if index != (@presigned_edit.fields.size - 1) %>,<% end %>
+        <% end %>
+      },
+      paramName: 'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
+      dataType: 'XML', // S3 returns XML if success_action_status is set to 201
+      autoUpload: true,
+      replaceFileInput: false,
+      done: function(e,data) {
+        var filename = $('#inputfile').val().split('\\').pop();
+        var url = "https://s3-eu-west-1.amazonaws.com/bysalescloud/pages/" + "<%= @page.id %>" + "/" + filename;
+        $('#image').val(filename);
+        $('#main-img').attr('src', url);
+      }
+    });
+  });
+  </script>

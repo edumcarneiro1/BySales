@@ -27,10 +27,10 @@ Bysales::Admin.controllers :artworks do
   post :edit, :csrf_protection => false, with: :id do |id|
     artwork =  Artwork.find_by(id: id)
 
-    halt 'errors/404' unless @artwork
+    halt 'errors/404' unless artwork
 
     if params['image'].present?
-      S3Upload.delete_older_images(artwork,params['image'])
+      S3Upload.delete_older_images(artwork,params['image'],'works')
 
       s3_path = "https://s3-eu-west-1.amazonaws.com/bysalescloud/works/#{artwork.id}/#{params['image']}"
       artwork.update(name: params['name'],description: params['description'],image: s3_path)
@@ -42,7 +42,7 @@ Bysales::Admin.controllers :artworks do
 
   post :new, :csrf_protection => false do
     artwork = Artwork.create(name: params['name'], description: params['description'])
-    S3Upload.image_upload_from_temp(artwork,params['image']) if params['image'].present?
+    S3Upload.image_upload_from_temp(artwork,params['image'],'works') if params['image'].present?
     redirect url(:artworks, :index)
   end
 
@@ -51,7 +51,7 @@ Bysales::Admin.controllers :artworks do
 
     halt 'errors/404' unless artwork
 
-    S3Upload.delete_image(artwork)
+    S3Upload.delete_image(artwork,'works')
 
     artwork.destroy
 

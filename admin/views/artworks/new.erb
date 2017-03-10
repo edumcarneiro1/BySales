@@ -46,9 +46,6 @@ $(document).ready(function(){
     dataType: 'XML', // S3 returns XML if success_action_status is set to 201
     autoUpload: true,
     replaceFileInput: false,
-    fail: function(e,data) {
-      debugger;
-    },
     done: function(e,data) {
       var filename = $('#inputfile').val().split('\\').pop();
       var url = "https://s3-eu-west-1.amazonaws.com/bysalescloud/works/new/" + filename;
