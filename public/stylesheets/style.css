@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Your template name 
+    Template Name: Your template name
     Template URI: http://bootexperts.com
     Description: This is html5 template
     Author: BootExperts
@@ -8,13 +8,20 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Theme Default CSS (body, link color, section etc)
 
 -----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Customized CSS
+/*----------------------------------------*/
+
+.page-section {min-height: 500px;}
+.body-section {min-height: 350px;}
 
 /*----------------------------------------*/
 /*  1.  Theme default CSS
@@ -353,7 +360,3 @@ h3.main-contact {
 .conract-area-bottom {
   margin-top: 50px;
 }
-
-
-
-

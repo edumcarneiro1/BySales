@@ -3,6 +3,7 @@
 
 <script src="/javascripts/components/js/menu.js"></script>
 <script src="/javascripts/components/js/works.js"></script>
+<script src="/javascripts/components/js/page.js"></script>
 <script type="text/javascript">
 
 var body = React.createClass({displayName: 'body',
@@ -26,7 +27,8 @@ var body = React.createClass({displayName: 'body',
         var content =   React.createElement('p', null, 'contact pageeeeee');
         break;
       default:
-        var content = React.createElement('p',null,this.state.tab)
+        index = getPage(this.state.pages, this.state.tab);
+        var content = React.createElement(Page,{page: this.state.pages[index]});
     }
     return(
       React.createElement('div',{className: "container"},
@@ -37,4 +39,13 @@ var body = React.createClass({displayName: 'body',
   }
 });
 var index = ReactDOM.render(React.createElement(body, null), document.getElementById('content'));
+
+function getPage(pages, title) {
+  for(var i=0; i < pages.length; i++) {
+    if(pages[i].title == title) {
+      return i;
+    }
+  }
+  return -1;
+}
 </script>
