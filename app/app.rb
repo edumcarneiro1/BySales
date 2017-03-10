@@ -41,7 +41,8 @@ module Bysales
     # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
     get :index do
-      p 'fghjklç'
+      @artist = Artist.first
+      render "home"
     end
     ##
     # You can configure for a specified environment like:

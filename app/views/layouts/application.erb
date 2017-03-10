@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Home 2 || Minimax</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+		      <!-- all css here -->
+        <%= stylesheet_link_tag 'bootstrap.min','font-awesome.min','et-line-fonts','animate','owl.carousel','magnific-popup','meanmenu','shortcode/shortcodes','style','responsive' %>
+
+        <%= javascript_include_tag 'vendor/jquery-1.12.0.min','vendor/modernizr-2.8.3.min'%>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Add your site or application content here -->
+		<!-- header start -->
+
+		<!-- header end -->
+		<div class="slider ptb-150">
+			<div class="container">
+				<div class="slider-info-text text-center">
+					<div class="info-inner">
+						<h1><%= @artist.title %></h1>
+						<span><%= @artist.subtitle %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- portfolio start -->
+		<div class="portfolio-area ptb-90">
+			<div class="container">
+				<div class="portfolio-menu text-center mb-50">
+					<button class="active">WORK</button>
+					<button>ABOUT ME</button>
+					<button>CONTACT</button>
+				</div>
+        <%= yield %>
+				<!-- <div class="view-more text-center">
+					<a href="#">view more</a>
+				</div> -->
+			</div>
+		</div>
+		<!-- portfolio end -->
+		<!-- service-area end -->
+		<footer class="footer-bg bg-opacity footer-border b ptb-90">
+			<div class="footer-area">
+				<div class="container">
+					<div class="footer-info text-center">
+						<div class="logo footer-logo">
+							<a href="#"><%= @artist.title %></a>
+						</div>
+						<ul>
+							<li>Phone : <%= @artist.phone %></li>
+							<li>Email : <%= @artist.email %></li>
+							<li>Address : <%= @artist.address %></li>
+						</ul>
+						<div class="social-icon mt-20">
+							<a href="<%= @artist.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="<%= @artist.instagram %>" target="_blank"><i class="fa fa-instagram"></i></a>
+							<a href="<%= @artist.pinterest %>" target="_blank"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+        <!-- start scrollUp  -->
+        <div id="toTop">
+            <i class="fa fa-chevron-up"></i>
+        </div>
+
+
+		<!-- all js here -->
+        <%= javascript_include_tag 'bootstrap.min','isotope.pkgd.min','owl.carousel.min', 'imagesloaded.pkgd.min','jquery.meanmenu','ajax-mail','plugins','main'%>
+        <script type="text/javascript">
+            // grab an element
+            var myElement = document.querySelector(".intelligent-header");
+            // construct an instance of Headroom, passing the element
+            var headroom  = new Headroom(myElement);
+            // initialise
+            headroom.init();
+        </script>
+    </body>
+</html>
