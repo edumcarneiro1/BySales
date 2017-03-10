@@ -29,7 +29,7 @@ class S3Upload
 
     def delete_older_images(obj,name,type)
       bucket = Aws::S3::Bucket.new(S3Upload.cfg['bucket'])
-      older_object_name = obj.image.split('/').last
+      older_object_name = obj.image.split('/').last if obj.image
       object =  bucket.object("#{type}/#{obj.id}/#{older_object_name}")
       object.delete if object
     end

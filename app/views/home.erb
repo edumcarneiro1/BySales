@@ -22,13 +22,17 @@ var body = React.createClass({displayName: 'body',
   render: function() {
     switch (this.state.tab) {
       case 'work':
+        $('.slider').css('background-image','');
         var content =   React.createElement(Works, {works: this.state.works});
         break;
         case 'contact':
+        $('.slider').css('background-image','');
         var content =   React.createElement(Contact, null);
         break;
       default:
         index = getPage(this.state.pages, this.state.tab);
+        $('.slider').css('background-image','url(' + this.state.pages[index].image + ')');
+        $('.slider').css('background-size','cover');
         var content = React.createElement(Page,{page: this.state.pages[index]});
     }
     return(
