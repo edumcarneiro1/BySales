@@ -14,6 +14,9 @@
         <%= stylesheet_link_tag 'bootstrap.min','font-awesome.min','et-line-fonts','animate','owl.carousel','magnific-popup','meanmenu','shortcode/shortcodes','style','responsive' %>
 
         <%= javascript_include_tag 'vendor/jquery-1.12.0.min','vendor/modernizr-2.8.3.min'%>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-with-addons.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -34,19 +37,7 @@
 			</div>
 		</div>
 		<!-- portfolio start -->
-		<div class="portfolio-area ptb-90">
-			<div class="container">
-				<div class="portfolio-menu text-center mb-50">
-					<button class="active">WORK</button>
-					<button>ABOUT ME</button>
-					<button>CONTACT</button>
-				</div>
-        <%= yield %>
-				<!-- <div class="view-more text-center">
-					<a href="#">view more</a>
-				</div> -->
-			</div>
-		</div>
+		<%= yield %>
 		<!-- portfolio end -->
 		<!-- service-area end -->
 		<footer class="footer-bg bg-opacity footer-border b ptb-90">

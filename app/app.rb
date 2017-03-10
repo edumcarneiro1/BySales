@@ -42,6 +42,7 @@ module Bysales
     #
     get :index do
       @artist = Artist.first
+      @data = {:works => Artwork.all.map {|work| work.attributes}, :pages => Page.all.map {|page| page.attributes}}
       render "home"
     end
     ##

@@ -6,3 +6,6 @@ vendor/gems/*
 .sass-cache/*
 db/*.db
 .*.sw*
+.byebug_history
+package.json
+node_modules/

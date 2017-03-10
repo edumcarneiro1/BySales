@@ -16,7 +16,7 @@
         <tbody>
           <% @pages.each do |page| %>
           <tr>
-            <td style="width: 10%"><a title="Edit Page" href="<%= url(:pages, :edit, id: page.id) %>"><img class="art-image" src="<%= page.image %>"></a></td>
+            <td style="width: 10%"><a title="Edit Page" href="<%= url(:pages, :edit, id: page.id) %>"><img class="art-image" src="<%= page.image ? page.image : 'http://placehold.it/350x150' %>"></a></td>
             <td style="width: 30%"><%= page.title %></td>
             <td style="width: 50%"><%= page.body %></td>
             <td style="width: 10%"><a class="trash" href="<%= url(:pages, :destroy, id: page.id) %>" title="Delete ArtWork"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
