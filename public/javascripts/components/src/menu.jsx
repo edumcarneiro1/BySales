@@ -6,11 +6,9 @@ var Menu = React.createClass({
   render: function() {
     var pages = [];
     var self = this;
+
     this.props.pages.map(function(elem,index) {
-      if(self.props.tab == elem.title) {
-        var active = "active";
-      }
-      pages.push(<button key={index} className={active} onClick={self.changetab}>{elem.title}</button>);
+      pages.push(<button key={index}  onClick={self.changetab}>{elem.title}</button>);
     });
     return(
       <div className="portfolio-menu text-center mb-50">

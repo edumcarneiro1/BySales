@@ -19,11 +19,6 @@ var Page = React.createClass({
             React.createElement(
               "div",
               { className: "project-desc  body-section" },
-              React.createElement(
-                "h3",
-                null,
-                this.props.page.title
-              ),
               this.props.page.body
             ),
             React.createElement(

@@ -4,6 +4,7 @@
 <script src="/javascripts/components/js/menu.js"></script>
 <script src="/javascripts/components/js/works.js"></script>
 <script src="/javascripts/components/js/page.js"></script>
+<script src="/javascripts/components/js/contact.js"></script>
 <script type="text/javascript">
 
 var body = React.createClass({displayName: 'body',
@@ -24,7 +25,7 @@ var body = React.createClass({displayName: 'body',
         var content =   React.createElement(Works, {works: this.state.works});
         break;
         case 'contact':
-        var content =   React.createElement('p', null, 'contact pageeeeee');
+        var content =   React.createElement(Contact, null);
         break;
       default:
         index = getPage(this.state.pages, this.state.tab);

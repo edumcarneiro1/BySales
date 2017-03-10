@@ -6,7 +6,6 @@ var Page = React.createClass({
           <div className="row pt-10">
             <div className="col-md-8 col-md-offset-2">
               <div className="project-desc  body-section">
-                <h3>{this.props.page.title}</h3>
                 {this.props.page.body}
               </div>
               <div className="post-share">

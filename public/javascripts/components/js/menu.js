@@ -10,13 +10,11 @@ var Menu = React.createClass({
   render: function render() {
     var pages = [];
     var self = this;
+
     this.props.pages.map(function (elem, index) {
-      if (self.props.tab == elem.title) {
-        var active = "active";
-      }
       pages.push(React.createElement(
         "button",
-        { key: index, className: active, onClick: self.changetab },
+        { key: index, onClick: self.changetab },
         elem.title
       ));
     });
