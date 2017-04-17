@@ -3,7 +3,7 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.string :image
       t.string :title
-      t.text :body, limit: 4294967295
+      t.text :body
     end
   end
 
