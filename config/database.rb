@@ -6,14 +6,24 @@
     :encoding  => 'unicode',
     :database  => 'bysales_db',
   }
+  # ActiveRecord::Base.configurations[:production] = {
+  #   :adapter   => 'postgresql',
+  #   :encoding  => 'unicode',
+  #   :host      => 'ec2-23-23-222-147.compute-1.amazonaws.com',
+  #   :database  => 'd13q4pa7eqiuri',
+  #   :user      => 'yukwtnsgzjqwax',
+  #   :password  => '96add065cc7dd0607d1d241df0a526ac6268446bc8bdd9359607dd9ce59b4128'
+  # }
+
   ActiveRecord::Base.configurations[:production] = {
-    :adapter   => 'postgresql',
-    :encoding  => 'unicode',
-    :host      => 'ec2-23-23-222-147.compute-1.amazonaws.com',
-    :database  => 'd13q4pa7eqiuri',
-    :user      => 'yukwtnsgzjqwax',
-    :password  => '96add065cc7dd0607d1d241df0a526ac6268446bc8bdd9359607dd9ce59b4128'
-  }
+  :adapter  => 'postgresql',
+  :encoding => 'utf8',
+  :username => 'yukwtnsgzjqwax',
+  :password => '96add065cc7dd0607d1d241df0a526ac6268446bc8bdd9359607dd9ce59b4128',
+  :host     => 'ec2-23-23-222-147.compute-1.amazonaws.com',
+  :database => 'd13q4pa7eqiuri',
+  :port     => 5432
+}
 
 # ActiveRecord::Base.configurations[:development] = {
 #   :adapter => 'sqlite3',
