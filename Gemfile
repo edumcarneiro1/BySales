@@ -19,7 +19,7 @@ gem 'rake'
 # Component requirements
 gem 'bcrypt'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
-gem 'mysql2'
+gem 'pg'
 gem 'aws-sdk', '~> 2'
 
 # Test requirements

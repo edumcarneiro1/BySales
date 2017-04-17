@@ -35,7 +35,6 @@ GEM
     moneta (0.7.20)
     mustermann19 (0.4.4)
       enumerable-lazy
-    mysql2 (0.4.5)
     padrino (0.13.2)
       padrino-admin (= 0.13.2)
       padrino-cache (= 0.13.2)
@@ -73,6 +72,7 @@ GEM
       activesupport (>= 3.1)
     parser (2.3.3.1)
       ast (~> 2.2)
+    pg (0.20.0)
     powerpack (0.1.1)
     rack (1.6.5)
     rack-protection (1.5.3)
@@ -105,10 +105,10 @@ DEPENDENCIES
   aws-sdk (~> 2)
   bcrypt
   byebug
-  mysql2
   padrino (= 0.13.2)
+  pg
   rake
   rubocop
 
 BUNDLED WITH
-   1.11.2
+   1.14.6

@@ -2,15 +2,17 @@
 # You can use other adapters like:
 #
   ActiveRecord::Base.configurations[:development] = {
-    :adapter   => 'mysql2',
-    :encoding  => 'utf8',
-    :reconnect => true,
+    :adapter   => 'postgresql',
+    :encoding  => 'unicode',
     :database  => 'bysales_db',
-    :pool      => 5,
-    :username  => 'root',
-    :password  => '',
-    :host      => 'localhost',
-    :socket    => '/tmp/mysql.sock'
+  }
+  ActiveRecord::Base.configurations[:production] = {
+    :adapter   => 'postgresql',
+    :encoding  => 'unicode',
+    :host      => 'ec2-54-221-234-118.compute-1.amazonaws.com',
+    :database  => 'bysales_db',
+    :user      => 'user'
+    :passowrd  => 'password'
   }
 
 # ActiveRecord::Base.configurations[:development] = {
