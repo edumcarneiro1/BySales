@@ -51,8 +51,8 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
-  Aws.use_bundled_cert! # https://github.com/aws/aws-sdk-core-ruby/issues/166
-  Aws.config.update(region: S3Upload.cfg['region'], credentials: Aws::Credentials.new(S3Upload.cfg['access_key_id'], S3Upload.cfg['secret_access_key']))
+  # Aws.use_bundled_cert! # https://github.com/aws/aws-sdk-core-ruby/issues/166
+  # Aws.config.update(region: S3Upload.cfg['region'], credentials: Aws::Credentials.new(S3Upload.cfg['access_key_id'], S3Upload.cfg['secret_access_key']))
 end
 
 Padrino.load!
