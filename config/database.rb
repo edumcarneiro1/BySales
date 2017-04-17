@@ -9,10 +9,10 @@
   ActiveRecord::Base.configurations[:production] = {
     :adapter   => 'postgresql',
     :encoding  => 'unicode',
-    :host      => 'ec2-54-221-234-118.compute-1.amazonaws.com',
-    :database  => 'bysales_db',
-    :user      => 'user'
-    :passowrd  => 'password'
+    :host      => 'ec2-23-23-222-147.compute-1.amazonaws.com',
+    :database  => 'd13q4pa7eqiuri',
+    :user      => 'yukwtnsgzjqwax'
+    :passowrd  => '96add065cc7dd0607d1d241df0a526ac6268446bc8bdd9359607dd9ce59b4128'
   }
 
 # ActiveRecord::Base.configurations[:development] = {
