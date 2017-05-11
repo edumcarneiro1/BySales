@@ -6,7 +6,7 @@ var Contact = React.createClass({
               <div className="row">
                   <div className="col-md-12">
                       <div className="conract-area-bottom">
-                          <h3 className="main-contact">Get In Tauch</h3>
+                          <h3 className="main-contact">Get In Touch</h3>
                           <form id="contact-form" action="#" method="post">
                               <div className="row">
                                   <div className="col-md-6">
@@ -26,8 +26,8 @@ var Contact = React.createClass({
                                   </div>
                                   <div className="col-md-12">
                                       <div className="text-leave2">
-                                          <textarea name="message" placeholder="Type Your Massage......."></textarea>
-                                          <button className="submit" type="submit">Send Massage</button>
+                                          <textarea name="message" placeholder="Type Your Message......."></textarea>
+                                          <button className="submit" type="submit">Send Message</button>
                                       </div>
                                   </div>
                               </div>

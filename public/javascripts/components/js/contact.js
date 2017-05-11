@@ -22,7 +22,7 @@ var Contact = React.createClass({
                             React.createElement(
                                 "h3",
                                 { className: "main-contact" },
-                                "Get In Tauch"
+                                "Get In Touch"
                             ),
                             React.createElement(
                                 "form",
@@ -63,11 +63,11 @@ var Contact = React.createClass({
                                         React.createElement(
                                             "div",
                                             { className: "text-leave2" },
-                                            React.createElement("textarea", { name: "message", placeholder: "Type Your Massage......." }),
+                                            React.createElement("textarea", { name: "message", placeholder: "Type Your Message......." }),
                                             React.createElement(
                                                 "button",
                                                 { className: "submit", type: "submit" },
-                                                "Send Massage"
+                                                "Send Message"
                                             )
                                         )
                                     )
